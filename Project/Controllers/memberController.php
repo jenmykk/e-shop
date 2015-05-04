@@ -7,7 +7,9 @@ use Ionian\Database\Database;
 class MemberController extends Controller{
 
     public function showAllMembersAction (){
-        //TODO Susanne
+        $stm = Database::get()->prepare("SELECT * FROM users");
+        $stm->execute();
+        $this->outputJSON($stm->fetchAll());
     }
     public function getMemberByIdAction($id){
         $stm = Database::get()->prepare("SELECT user_id, email FROM users WHERE user_id = :id");
