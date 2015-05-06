@@ -7,7 +7,9 @@ use Ionian\Database\Database;
 class MemberController extends Controller{
 
     public function showAllMembersAction (){
-        //TODO Susanne
+        $stm = Database::get()->prepare("SELECT * FROM users");
+        $stm->execute();
+        $this->outputJSON($stm->fetchAll());
     }
     public function getMemberByIdAction($id){
         $stm = Database::get()->prepare("SELECT user_id, email FROM users WHERE user_id = :id");
@@ -37,6 +39,126 @@ class MemberController extends Controller{
         if (count($carts) > 0){
 
             foreach($carts as $cart){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 //select all products from it
                 $stm = Database::get()->prepare("SELECT cart_products.cartproducts_cart_id,
                                                     products.product_id,
